@@ -80,10 +80,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="New project!" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1602179335340">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1602179559309">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1602179335340" />
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1602179559309" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1602179687231">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602179687231" />
     <state x="594" y="298" key="EditFileWatcherDialog" timestamp="1602172804035">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -104,14 +108,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602179509468" />
-    <state x="552" y="241" key="Vcs.Push.Dialog.v2" timestamp="1602179375432">
+    <state x="552" y="241" key="Vcs.Push.Dialog.v2" timestamp="1602179686225">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="241" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602179375432" />
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602178355373">
+    <state x="552" y="241" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602179686225" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602179556484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602178355373" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602179556484" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1602172345028">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea3b5f8b-b9ee-47fb-852e-e0a0846d30b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/comments.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/comments.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/html/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/html/css/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/css/style.sass" beforeDir="false" afterPath="$PROJECT_DIR$/html/css/style.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +24,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/rhia" />
     <property name="prettierjs.PrettierConfiguration.NodeInterpreter" value="project" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\user\WebstormProjects\Anesthesia\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -48,7 +43,7 @@
       <workItem from="1602172237281" duration="4749000" />
       <workItem from="1602178987390" duration="238000" />
       <workItem from="1602179237845" duration="2465000" />
-      <workItem from="1602235738113" duration="1282000" />
+      <workItem from="1602235738113" duration="1918000" />
     </task>
     <task id="LOCAL-00001" summary="New project!">
       <created>1602179053826</created>
@@ -127,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602180338566</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="сделала список комментариев">
+      <created>1602237166401</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1602237166401</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,17 +137,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="New project!" />
-    <option name="LAST_COMMIT_MESSAGE" value="New project!" />
+    <MESSAGE value="сделала список комментариев" />
+    <option name="LAST_COMMIT_MESSAGE" value="сделала список комментариев" />
   </component>
   <component name="WindowStateProjectService">
     <state x="740" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602179704800">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1602179704800" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1602180337617">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1602237163640">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1602180337617" />
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1602237163640" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1602180540428">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -154,10 +157,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="594" y="298" key="EditFileWatcherDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602172804035" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1602181482360">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1602237739233">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602181482360" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602237739233" />
     <state x="782" y="419" key="Github.CreateGistDialog" timestamp="1602178958695">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -174,10 +177,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="783" y="224" key="VCS.ChangeListViewerDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602180442928" />
-    <state x="552" y="241" key="Vcs.Push.Dialog.v2" timestamp="1602180486330">
+    <state x="552" y="241" key="Vcs.Push.Dialog.v2" timestamp="1602237168235">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="241" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602180486330" />
+    <state x="552" y="241" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602237168235" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602179556484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

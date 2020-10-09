@@ -14,7 +14,7 @@ let mainContent = '',
 fetchPromise.then(response => {
     return response.json();
 }).then(comments => {
-    comments.some(comment => {
+    for (let i = 0; i < 10; i++) {
         mainContent+= `
      <div class="comment-text text-justify mt-2" id="comments">
  ${comment.name}
@@ -22,10 +22,8 @@ fetchPromise.then(response => {
  
 
    </div>`;
-        if (comments.length > 10) {
-            comments.length = 10;
-        }
-    });
+
+    }
     console.log(comments);
     main.innerHTML = mainContent;
 });

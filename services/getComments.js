@@ -1,11 +1,12 @@
 const fetchPromise = fetch("https://jsonplaceholder.typicode.com/comments");
 
-const globalPromise = catchComment = fetchPromise
+const globalPromise = fetchPromise
   .then((response) => {
     return response.json();
   })
   .then((comment) => {
     listRendering(comment);
+      console.log(arrayClone(comment));
   });
 function listRendering(comment) {
   for (let i = 0; i < 10; ++i) {
@@ -46,12 +47,9 @@ function commentBody({ email, name, body }) {
             </div>
           </div>`;
 }
-function catchComment() {
-  let arr = [];
-  arr.slice(10);
-  arr.push(comment[i]);
+
+function arrayClone(comment) {
+  return comment.slice(0, 10);
 }
 
- console.log(globalPromise);
-
-console.log(catchComment);
+console.log(globalPromise);

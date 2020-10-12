@@ -4,14 +4,14 @@ const globalPromise = fetchPromise
   .then((response) => {
     return response.json();
   })
-  .then((comment) => {
-    listRendering(comment);
+  .then((comments) => {
+    listRendering(comments);
+  });
+function listRendering(comments) {
+  comments.forEach(function app(comment) {
+    $("#comments").append(commentBody(comment));
     console.log(arrayClone(comment));
   });
-function listRendering(comment) {
-  for (let i = 0; i < 10; ++i) {
-    $("#comments").append(commentBody(comment[i]));
-  }
 }
 function commentBody({ email, name, body }) {
   return `<div class="p-3 bg-white mt-2 rounded">

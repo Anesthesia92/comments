@@ -6,7 +6,7 @@ const globalPromise = fetchPromise
   })
   .then((comment) => {
     listRendering(comment);
-      console.log(arrayClone(comment));
+    console.log(arrayClone(comment));
   });
 function listRendering(comment) {
   for (let i = 0; i < 10; ++i) {

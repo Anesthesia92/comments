@@ -6,13 +6,14 @@ const globalPromise =  fetchPromise
   })
   .then((comments) => {
     listRendering(comments);
-
   });
 function listRendering(comments) {
-  comments.forEach(function(comment) {
+    comments.forEach(function(comment) {
     $("#comments").append(commentBody(comment));
-      console.log(arrayClone(comments));
-  });
+        const cloneComments = {comments};
+        cloneComments.prototype = [comments].prototype;
+console.log(arrayClone(comments));
+  })
 }
 function commentBody({ email, name, body }) {
   return `<div class="p-3 bg-white mt-2 rounded">
@@ -47,11 +48,12 @@ function commentBody({ email, name, body }) {
               </button>
             </div>
           </div>`;
-
-
 }
 
-function arrayClone(comments) {
-    return comments.splice(0, 50);
-}
+ function arrayClone(cloneComments) {
+     return cloneComments.splice(10);
+ }
+
+
+
 console.log(globalPromise);

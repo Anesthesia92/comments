@@ -1,16 +1,17 @@
 const fetchPromise = fetch("https://jsonplaceholder.typicode.com/comments");
 
-const globalPromise = fetchPromise
+const globalPromise =  fetchPromise
   .then((response) => {
     return response.json();
   })
   .then((comments) => {
     listRendering(comments);
+
   });
 function listRendering(comments) {
-  comments.forEach(function app(comment) {
+  comments.forEach(function(comment) {
     $("#comments").append(commentBody(comment));
-    console.log(arrayClone(comment));
+      console.log(arrayClone(comments));
   });
 }
 function commentBody({ email, name, body }) {
@@ -46,10 +47,11 @@ function commentBody({ email, name, body }) {
               </button>
             </div>
           </div>`;
+
+
 }
 
-function arrayClone(comment) {
-  return comment.slice(0, 10);
+function arrayClone(comments) {
+    return comments.splice(0, 50);
 }
-
 console.log(globalPromise);

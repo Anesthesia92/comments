@@ -1,20 +1,27 @@
 const fetchPromise = fetch("https://jsonplaceholder.typicode.com/comments");
 
-const globalPromise =  fetchPromise
+const globalPromise = fetchPromise
   .then((response) => {
     return response.json();
   })
+
   .then((comments) => {
-    listRendering(comments);
+    arrayClone(comments);
   });
-function listRendering(comments) {
-    comments.forEach(function(comment) {
-    $("#comments").append(commentBody(comment));
-        const cloneComments = {comments};
-        cloneComments.prototype = [comments].prototype;
-console.log(arrayClone(comments));
-  })
+function arrayClone(comments) {
+  let commentsCopy = [...comments];
+  commentsCopy.splice(10, 500);
+  listRendering(commentsCopy);
+  console.log(commentsCopy);
 }
+
+function listRendering(commentsCopy) {
+  // console.log(arrayClone(comments));
+  commentsCopy.forEach(function (comment) {
+    $("#comments").append(commentBody(comment));
+  });
+}
+
 function commentBody({ email, name, body }) {
   return `<div class="p-3 bg-white mt-2 rounded">
             <div class="d-flex justify-content-between">
@@ -49,11 +56,5 @@ function commentBody({ email, name, body }) {
             </div>
           </div>`;
 }
-
- function arrayClone(cloneComments) {
-     return cloneComments.splice(10);
- }
-
-
 
 console.log(globalPromise);

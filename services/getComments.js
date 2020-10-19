@@ -1,14 +1,13 @@
-const fetchPromise = fetch("https://jsonplaceholder.typicode.com/comments");
+const getAllComments = fetch("https://jsonplaceholder.typicode.com/comments");
 
-const globalPromise = fetchPromise
+const dataReceiving = getAllComments
   .then((response) => {
     return response.json();
   })
-
   .then((comments) => {
-    arrayClone(comments);
+    cloneComments(comments);
   });
-function arrayClone(comments) {
+function cloneComments(comments) {
   let commentsCopy = [...comments];
   commentsCopy.splice(10, 500);
   listRendering(commentsCopy);
@@ -57,4 +56,4 @@ function commentBody({ email, name, body }) {
           </div>`;
 }
 
-console.log(globalPromise);
+console.log(dataReceiving);

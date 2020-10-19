@@ -32,4 +32,8 @@ body {
   cursor: pointer;
 }
 
+.comments__text {
+  display: flex;
+}
+
 /*# sourceMappingURL=style.css.map */

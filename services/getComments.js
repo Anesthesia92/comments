@@ -5,17 +5,14 @@ const dataReceiving = getAllComments
     return response.json();
   })
   .then((comments) => {
-    cloneComments(comments);
+    const cutComments = cloneComments(comments);
+    listRendering(cutComments);
   });
 function cloneComments(comments) {
-  let commentsCopy = [...comments];
-  commentsCopy.splice(10, 500);
-  listRendering(commentsCopy);
-  console.log(commentsCopy);
+  return comments.slice(0, 10);
 }
 
 function listRendering(commentsCopy) {
-  // console.log(arrayClone(comments));
   commentsCopy.forEach(function (comment) {
     $("#comments").append(commentBody(comment));
   });

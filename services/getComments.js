@@ -54,3 +54,4 @@ function commentBody({ email, name, body }) {
 }
 
 console.log(dataReceiving);
+

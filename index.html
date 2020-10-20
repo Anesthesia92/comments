@@ -42,12 +42,13 @@
                   alt="img"
                 />
                 <div class="d-flex flex-column ml-2">
-                  <label for="FormControl"></label>
+                  <label for="nameForm"></label>
                   <input
                     type="email"
                     class=""
-                    id="FormControl"
+                    id="nameForm"
                     placeholder="name@example.com"
+
                   />
                 </div>
               </div>
@@ -59,9 +60,8 @@
                   type="text"
                   class="form-control border-0 no-box-shadow ml-1"
                   placeholder="Leave a comment here"
-                  id="comment"
-                />
-                <button type="button" class="btn btn-success">Send</button>
+                  id="comment"/>
+                <button type="submit" class="btn btn-success" id="btn">Send</button>
               </p>
             </div>
           </div>
@@ -77,5 +77,6 @@
       </div>
     </div>
     <script src="services/getComments.js" type="module"></script>
+    <script src="js/input.js" type="module"></script>
   </body>
 </html>

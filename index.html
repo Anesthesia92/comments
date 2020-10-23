@@ -32,39 +32,47 @@
     <div class="container mt-5 mb-5">
       <div class="d-flex justify-content-center row">
         <div class="col-md-8">
-          <div class="p-3 bg-white mt-2 rounded">
-            <div class="d-flex justify-content-between">
-              <div class="d-flex flex-row user">
-                <img
-                  class="rounded-circle img-fluid img-responsive"
-                  src="https://i.imgur.com/JXZLwEY.jpg"
-                  width="40"
-                  alt="img"
-                />
-                <div class="d-flex flex-column ml-2">
-                  <label for="nameForm"></label>
-                  <input
-                    type="email"
-                    class=""
-                    id="nameForm"
-                    placeholder="name@example.com"
-
+          <form>
+            <div class="p-3 bg-white mt-2 rounded">
+              <div class="d-flex justify-content-between">
+                <div class="d-flex flex-row user">
+                  <img
+                    class="rounded-circle img-fluid img-responsive"
+                    src="https://i.imgur.com/JXZLwEY.jpg"
+                    width="40"
+                    alt="img"
                   />
+                  <div class="d-flex flex-column ml-2">
+                    <label for="email"></label>
+                    <input
+                      type="email"
+                      class=""
+                      required
+                      id="email"
+                      placeholder="name@example.com"
+                      name="email"
+                    />
+                  </div>
                 </div>
               </div>
+              <div class="comment-text text-justify mt-2">
+                <p class="comments comments__text">
+                  <label for="comment"></label>
+                  <input
+                    type="text"
+                    class="form-control border-0 no-box-shadow ml-1"
+                    placeholder="Leave a comment here"
+                    id="comment"
+                    required
+                    name="body"
+                  />
+                  <button type="submit" class="btn btn-success" id="btn">
+                    Send
+                  </button>
+                </p>
+              </div>
             </div>
-            <div class="comment-text text-justify mt-2 ">
-              <p class="comments comments__text">
-                <label for="comment"></label>
-                <input
-                  type="text"
-                  class="form-control border-0 no-box-shadow ml-1"
-                  placeholder="Leave a comment here"
-                  id="comment"/>
-                <button type="submit" class="btn btn-success" id="btn">Send</button>
-              </p>
-            </div>
-          </div>
+          </form>
           <div class="parents" id="comments"></div>
 
           <div class="p-3 bg-white mt-2 rounded text-center">

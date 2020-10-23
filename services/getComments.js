@@ -7,11 +7,12 @@ const dataReceiving = getAllComments
   .then((comments) => {
     const cutComments = cloneComments(comments);
     listRendering(cutComments);
+    // cutComments.push(newList)
+    console.log(cutComments);
   });
 function cloneComments(comments) {
   return comments.slice(0, 10);
 }
-
 function listRendering(commentsCopy) {
   commentsCopy.forEach(function (comment) {
     $("#comments").append(commentBody(comment));
@@ -55,3 +56,25 @@ function commentBody({ email, name, body }) {
 
 console.log(dataReceiving);
 
+//  let newList = $( "form" ).on("submit", function(event) {
+//     event.preventDefault();
+//
+//
+//    console.log($(this).serialize());
+// })
+
+let newList = [];
+
+$("#btn").on("click", function (e) {
+  let body = $("#comment");
+  let email = $("#email");
+  e.preventDefault();
+  let comment = {
+    email: email.val(),
+    body: body.val(),
+  };
+  email.val("");
+  body.val("");
+  newList.push(comment);
+  console.log(newList);
+});

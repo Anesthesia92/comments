@@ -7,13 +7,14 @@ const dataReceiving = getAllComments
   .then((comments) => {
     const cutComments = cloneComments(comments);
     listRendering(cutComments);
-    // cutComments.push(newList)
+    cutComments.push(newList);
     console.log(cutComments);
   });
 function cloneComments(comments) {
   return comments.slice(0, 10);
 }
 function listRendering(commentsCopy) {
+
   commentsCopy.forEach(function (comment) {
     $("#comments").append(commentBody(comment));
   });
@@ -77,4 +78,11 @@ $("#btn").on("click", function (e) {
   body.val("");
   newList.push(comment);
   console.log(newList);
+})
+.on("click", function (comments, list = [], isListClean = true)
+{
+   if (isListClean) {
+     $("#comments").empty();
+
+   }
 });

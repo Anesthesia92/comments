@@ -44,14 +44,14 @@ function commentBody({ email, name, body }) {
              ${name}
               <p class="comments">${body}</p>
             </div>
-            <div class="d-flex justify-content-end align-items-center comment-buttons mt-2 text-right">
-              <span class="mr-3 delete">Delete</span
-              ><button
+          <div class="d-flex justify-content-end align-items-center comment-buttons buttons mt-2 text-right">
+              <button type="button" class="btn btn-link buttons__delete">Delete</button>
+              <button
                 class="btn btn-success btn-sm border-0 px-3"
                 type="button">
                 Edit
               </button>
-            </div>
+            </span>
           </div>`;
 }
 
@@ -78,3 +78,7 @@ $("#btn")
     }
     listRendering(visibleComments);
   });
+
+$( "#buttons__delete" ).click(function() {
+    $( "#comments" ).remove();
+});

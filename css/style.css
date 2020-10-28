@@ -36,4 +36,12 @@ body {
   display: flex;
 }
 
+.buttons__delete {
+  color: green;
+}
+
+.buttons__delete:hover {
+  color: #365836;
+}
+
 /*# sourceMappingURL=style.css.map */

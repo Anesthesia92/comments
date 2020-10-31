@@ -21,7 +21,7 @@ function listRendering(commentsCopy) {
 }
 
 function commentBody({ email, name, body }) {
-  return `<div class="p-3 bg-white mt-2 rounded">
+  return `<div class="p-3 bg-white mt-2 rounded comment-text" id="myDivComment">
             <div class="d-flex justify-content-between">
               <div class="d-flex flex-row user">
                 <img
@@ -44,8 +44,8 @@ function commentBody({ email, name, body }) {
              ${name}
               <p class="comments">${body}</p>
             </div>
-          <div class="d-flex justify-content-end align-items-center comment-buttons buttons mt-2 text-right">
-              <button type="button" class="btn btn-link buttons__delete">Delete</button>
+          <div class="d-flex justify-content-end align-items-center comment-buttons mt-2 text-right">
+              <button type="button" class="btn btn-link buttons-delete" id="clearDiv">Delete</button>
               <button
                 class="btn btn-success btn-sm border-0 px-3"
                 type="button">
@@ -79,6 +79,7 @@ $("#btn")
     listRendering(visibleComments);
   });
 
-$( "#buttons__delete" ).click(function() {
-    $( "#comments" ).remove();
+$(document).on("click", ".buttons-delete", function () {
+  let commentRemover = $("#myDivComment");
+    commentRemover.remove();
 });

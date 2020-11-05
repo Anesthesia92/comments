@@ -40,14 +40,16 @@ function commentBody({ email, name, body }) {
                 ><span class="ml-2">35</span>
               </div>
             </div>
-            <div class="comment-text text-justify mt-2">
-             ${name}
-              <p class="comments">${body}</p>
-            </div>
+     
+         <div class="comment-text text-justify mt-2" id="textComment">
+   
+          
+  <p class="comments" id="commentsBody">  ${name}  <br> ${body}</p> 
+       </div>
           <div class="d-flex justify-content-end align-items-center comment-buttons mt-2 text-right">
               <button type="button" class="btn btn-link buttons-delete" id="clearDiv">Delete</button>
               <button
-                class="btn btn-success btn-sm border-0 px-3"
+                class="btn btn-success btn-sm border-0 px-3 buttons-edit" id="buttons-edit"
                 type="button">
                 Edit
               </button>
@@ -61,7 +63,7 @@ $("#btn")
   .on("click", function (e) {
     let body = $("#comment");
     let email = $("#email");
-    let name = $("#email");
+    let name = $("#name");
     e.preventDefault();
     let comment = {
       email: email.val(),
@@ -81,5 +83,13 @@ $("#btn")
 
 $(document).on("click", ".buttons-delete", function () {
   let commentRemover = $("#myDivComment");
-    commentRemover.remove();
+  commentRemover.remove();
+});
+
+$(document).on("click", ".buttons-edit", function () {
+  $("#textComment").replaceWith(
+    "<textarea id='textComment' name='textComment' class='form-control'>" +
+      $("#commentsBody").html() +
+      "</textarea>"
+  );
 });

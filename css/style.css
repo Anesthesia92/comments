@@ -44,4 +44,17 @@ body {
   color: #365836;
 }
 
+textarea::-webkit-scrollbar {
+  width: 1em;
+}
+
+textarea::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px #1d5330;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid green;
+}
+
 /*# sourceMappingURL=style.css.map */

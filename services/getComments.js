@@ -41,9 +41,8 @@ function commentBody({ email, name, body }) {
               </div>
             </div>
      
-         <div class="comment-text text-justify mt-2" id="textComment">
+         <div class="comment-text text-justify mt-2 textComment">
    
-          
   <p class="comments" id="commentsBody">  ${name}  <br> ${body}</p> 
        </div>
           <div class="d-flex justify-content-end align-items-center comment-buttons mt-2 text-right">
@@ -87,9 +86,13 @@ $(document).on("click", ".buttons-delete", function () {
 });
 
 $(document).on("click", ".buttons-edit", function () {
-  $("#textComment").replaceWith(
-    "<textarea id='textComment' name='textComment' class='form-control'>" +
-      $("#commentsBody").html() +
-      "</textarea>"
-  );
+  let commentIndex = $(this).closest(".comment-text").index();
+
+  console.log(commentIndex);
 });
+
+// $("#textComment").replaceWith(
+//   "<textarea id='textComment' name='textComment' class='form-control'>" +
+//     $("#commentsBody").html() +
+//     "</textarea>"
+// );

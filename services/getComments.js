@@ -21,7 +21,7 @@ function listRendering(commentsCopy) {
 }
 
 function commentBody({ email, name, body }) {
-  return `<div class="p-3 bg-white mt-2 rounded comment-text" id="myDivComment">
+  return `<div class="p-3 bg-white mt-2 rounded comment-text myDivComment" id="myDivComment">
             <div class="d-flex justify-content-between">
               <div class="d-flex flex-row user">
                 <img
@@ -40,10 +40,10 @@ function commentBody({ email, name, body }) {
                 ><span class="ml-2">35</span>
               </div>
             </div>
-     
+
          <div class="comment-text text-justify mt-2 textComment">
    
-  <p class="comments" id="commentsBody">  ${name}  <br> ${body}</p> 
+  <p class="comments commentsBody">  ${name}  <br> ${body}</p> 
        </div>
           <div class="d-flex justify-content-end align-items-center comment-buttons mt-2 text-right">
               <button type="button" class="btn btn-link buttons-delete" id="clearDiv">Delete</button>
@@ -86,7 +86,17 @@ $(document).on("click", ".buttons-delete", function () {
 });
 
 $(document).on("click", ".buttons-edit", function () {
-  let commentIndex = $(this).closest(".comment-text").index();
+  let commentIndex = $(this).closest(".myDivComment").index();
+
+  $(".textComment").each(function (i, item) {
+    if (commentIndex >= i) {
+      $(item).replaceWith(
+        "<textarea id='textComment' name='textComment' class='form-control'>" +
+          $(".commentsBody").html() +
+          "</textarea>"
+      );
+    }
+  });
 
   console.log(commentIndex);
 });
@@ -96,3 +106,9 @@ $(document).on("click", ".buttons-edit", function () {
 //     $("#commentsBody").html() +
 //     "</textarea>"
 // );
+
+// $(".places__photos-countries__all-stars__item").each(function (i, item) {
+//     if (starIndex >= i) {
+//         $(item).addClass("fas");
+//     }
+// });

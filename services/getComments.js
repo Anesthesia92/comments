@@ -81,17 +81,18 @@ $("#button-send")
 
 $(document).on("click", ".buttons-delete", function () {
   let commentIndex = $(this).closest(".myDivComment").index();
-
-
+    let commentRemover = $(".myDivComment")[commentIndex]
+    $(commentRemover).remove();
+console.log(commentIndex)
 });
 
 $(document).on("click", ".buttons-edit", function () {
   let commentIndex = $(this).closest(".myDivComment").index();
 
   const bodyIndex = visibleComments[commentIndex].body
+    let commentEditor = $(".textComment")[commentIndex]
 
-
-  $(".textComment").replaceWith(
+  $(commentEditor).replaceWith(
    "<textarea name='text' class='form-control textComment'>" +
       bodyIndex +
    "</textarea>" );

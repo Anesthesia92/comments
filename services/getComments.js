@@ -5,9 +5,11 @@ let dataReceiving = getAllComments
     return response.json();
   })
   .then((comments) => {
+
     let cutComments = cloneComments(comments);
     listRendering(cutComments);
     visibleComments.push(...cutComments);
+
   });
 
 function cloneComments(comments) {
@@ -20,7 +22,7 @@ function listRendering(commentsCopy) {
   });
 }
 
-function commentBody({ email, name, body }) {
+function commentBody({ email, body }) {
   return `<div class="p-3 bg-white mt-2 rounded comment-text myDivComment" id="myDivComment">
             <div class="d-flex justify-content-between">
               <div class="d-flex flex-row user">
@@ -42,8 +44,8 @@ function commentBody({ email, name, body }) {
             </div>
 
          <div class="comment-text text-justify mt-2 textComment">
-   
-  <p class="comments commentsBody">  ${name}  <br> ${body}</p> 
+
+   <p class="comments commentsBody">   ${body}</p> 
        </div>
           <div class="d-flex justify-content-end align-items-center comment-buttons mt-2 text-right">
               <button type="button" class="btn btn-link buttons-delete" id="clearDiv">Delete</button>
@@ -58,47 +60,43 @@ function commentBody({ email, name, body }) {
 
 console.log(dataReceiving);
 
-$("#btn")
+$("#button-send")
   .on("click", function (e) {
-    let body = $("#comment");
-    let email = $("#email");
-    let name = $("#name");
     e.preventDefault();
+    let bodyComment = $("#comment");
+    let email = $("#email");
     let comment = {
       email: email.val(),
-      body: body.val(),
-      name: name.val(),
+      body: bodyComment.val(),
+
     };
+    if (bodyComment.val() && email.val()) {
     email.val("");
-    body.val("");
+    bodyComment.val("");
     visibleComments.unshift(comment);
-  })
-  .on("click", function (comments, list = [], isListClean = true) {
-    if (isListClean) {
       $("#comments").empty();
-    }
     listRendering(visibleComments);
+    }
   });
 
 $(document).on("click", ".buttons-delete", function () {
-  let commentRemover = $("#myDivComment");
-  commentRemover.remove();
+  let commentIndex = $(this).closest(".myDivComment").index();
+
+
 });
 
 $(document).on("click", ".buttons-edit", function () {
   let commentIndex = $(this).closest(".myDivComment").index();
 
-  $(".textComment").each(function (i, item) {
-    if (commentIndex >= i) {
-      $(item).replaceWith(
-        "<textarea id='textComment' name='textComment' class='form-control'>" +
-          $(".commentsBody").html() +
-          "</textarea>"
-      );
-    }
-  });
+  const bodyIndex = visibleComments[commentIndex].body
 
-  console.log(commentIndex);
+
+  $(".textComment").replaceWith(
+   "<textarea name='text' class='form-control textComment'>" +
+      bodyIndex +
+   "</textarea>" );
+
+    console.log(bodyIndex);
 });
 
 // $("#textComment").replaceWith(
@@ -107,8 +105,3 @@ $(document).on("click", ".buttons-edit", function () {
 //     "</textarea>"
 // );
 
-// $(".places__photos-countries__all-stars__item").each(function (i, item) {
-//     if (starIndex >= i) {
-//         $(item).addClass("fas");
-//     }
-// });

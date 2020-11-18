@@ -5,11 +5,9 @@ let dataReceiving = getAllComments
     return response.json();
   })
   .then((comments) => {
-
     let cutComments = cloneComments(comments);
     listRendering(cutComments);
     visibleComments.push(...cutComments);
-
   });
 
 function cloneComments(comments) {
@@ -48,10 +46,9 @@ function commentBody({ email, body }) {
    <p class="comments commentsBody">   ${body}</p> 
        </div>
           <div class="d-flex justify-content-end align-items-center comment-buttons mt-2 text-right">
-              <button type="button" class="btn btn-link buttons-delete" id="clearDiv">Delete</button>
+              <button type="button" class="btn btn-link buttons-delete">Delete</button>
               <button
-                class="btn btn-success btn-sm border-0 px-3 buttons-edit" id="buttons-edit"
-                type="button">
+                class="btn btn-success btn-sm border-0 px-3 buttons-edit" type="button">
                 Edit
               </button>
             </span>
@@ -60,49 +57,43 @@ function commentBody({ email, body }) {
 
 console.log(dataReceiving);
 
-$("#button-send")
-  .on("click", function (e) {
-    e.preventDefault();
-    let bodyComment = $("#comment");
-    let email = $("#email");
-    let comment = {
-      email: email.val(),
-      body: bodyComment.val(),
-
-    };
-    if (bodyComment.val() && email.val()) {
+$("#button-send").on("click", function (e) {
+  e.preventDefault();
+  let bodyComment = $("#comment");
+  let email = $("#email");
+  let comment = {
+    email: email.val(),
+    body: bodyComment.val(),
+  };
+  if (bodyComment.val() && email.val()) {
     email.val("");
     bodyComment.val("");
     visibleComments.unshift(comment);
-      $("#comments").empty();
+    $("#comments").empty();
     listRendering(visibleComments);
-    }
-  });
+  }
+});
 
 $(document).on("click", ".buttons-delete", function () {
   let commentIndex = $(this).closest(".myDivComment").index();
-    let commentRemover = $(".myDivComment")[commentIndex]
-    $(commentRemover).remove();
-console.log(commentIndex)
+  let commentRemover = $(".myDivComment")[commentIndex];
+  $(commentRemover).remove();
+  console.log(commentIndex);
 });
 
 $(document).on("click", ".buttons-edit", function () {
   let commentIndex = $(this).closest(".myDivComment").index();
-
-  const bodyIndex = visibleComments[commentIndex].body
-    let commentEditor = $(".textComment")[commentIndex]
-
+  const bodyIndex = visibleComments[commentIndex].body;
+  let commentEditor = $(".textComment")[commentIndex];
+  let buttonSaver = $(".buttons-edit")[commentIndex];
   $(commentEditor).replaceWith(
-   "<textarea name='text' class='form-control textComment'>" +
+    "<textarea name='text' class='form-control textComment'>" +
       bodyIndex +
-   "</textarea>" );
-
-    console.log(bodyIndex);
+      "</textarea>"
+  );
+  $(buttonSaver).replaceWith(
+    "<button type='button' class='btn btn-success btn-sm border-0 px-3'> Save </button>"
+  );
+  console.log(commentIndex);
+  console.log(buttonSaver);
 });
-
-// $("#textComment").replaceWith(
-//   "<textarea id='textComment' name='textComment' class='form-control'>" +
-//     $("#commentsBody").html() +
-//     "</textarea>"
-// );
-

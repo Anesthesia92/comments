@@ -21,7 +21,7 @@ function listRendering(commentsCopy) {
 }
 
 function commentBody({ email, body }) {
-  return `<div class="p-3 bg-white mt-2 rounded comment-text myDivComment" id="myDivComment">
+  return `<div class="p-3 bg-white mt-2 rounded comment-text myDivComment">
             <div class="d-flex justify-content-between">
               <div class="d-flex flex-row user">
                 <img
@@ -43,7 +43,7 @@ function commentBody({ email, body }) {
 
          <div class="comment-text text-justify mt-2 textComment">
 
-   <p class="comments commentsBody">   ${body}</p> 
+   <p class="comments commentsBody">${body}</p> 
        </div>
           <div class="d-flex justify-content-end align-items-center comment-buttons mt-2 text-right">
               <button type="button" class="btn btn-link buttons-delete">Delete</button>
@@ -85,15 +85,42 @@ $(document).on("click", ".buttons-edit", function () {
   let commentIndex = $(this).closest(".myDivComment").index();
   const bodyIndex = visibleComments[commentIndex].body;
   let commentEditor = $(".textComment")[commentIndex];
+
   let buttonSaver = $(".buttons-edit")[commentIndex];
+
   $(commentEditor).replaceWith(
-    "<textarea name='text' class='form-control textComment'>" +
+    "<textarea name='text' class='form-control textComment edition'>" +
       bodyIndex +
       "</textarea>"
   );
   $(buttonSaver).replaceWith(
-    "<button type='button' class='btn btn-success btn-sm border-0 px-3'> Save </button>"
+    "<button type='button' class='btn btn-success btn-sm border-0 px-3 buttons-save'>Save</button>"
   );
   console.log(commentIndex);
-  console.log(buttonSaver);
+});
+
+$(document).on("click", ".buttons-save", function () {
+  let commentIndex = $(this).closest(".myDivComment").index();
+  let commentEditor = $(".edition")[commentIndex];
+
+  // let bodyComment = commentEditor;
+  // let email = visibleComments[commentIndex].email;
+  // let comment = {
+  //   email: email.val(),
+  //   body: bodyComment.val(),
+  // };
+  // visibleComments[commentIndex] = comment
+  // const bodyIndex = visibleComments[commentIndex].body;
+
+  let html = $(commentEditor).val();
+  // $(commentEditor).text(html);
+  console.log(html);
+  $(commentEditor).replaceWith(
+    "<p class='comments commentsBody'>" + html + "</p>"
+  );
+
+  let buttonSaver = $(".buttons-save")[commentIndex];
+  $(buttonSaver).replaceWith(
+    "<button type='button' class='btn btn-success btn-sm border-0 px-3 buttons-edit'>Edit</button>"
+  );
 });

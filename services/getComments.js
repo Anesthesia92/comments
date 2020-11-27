@@ -86,41 +86,40 @@ $(document).on("click", ".buttons-edit", function () {
   const bodyIndex = visibleComments[commentIndex].body;
   let commentEditor = $(".textComment")[commentIndex];
 
-  let buttonSaver = $(".buttons-edit")[commentIndex];
-
   $(commentEditor).replaceWith(
-    "<textarea name='text' class='form-control textComment edition'>" +
+    "<textarea name='text' class='form-control textComment'>" +
       bodyIndex +
       "</textarea>"
-  );
-  $(buttonSaver).replaceWith(
-    "<button type='button' class='btn btn-success btn-sm border-0 px-3 buttons-save'>Save</button>"
   );
   console.log(commentIndex);
 });
 
+$(document).on("click", ".buttons-edit", function () {
+  $(this).replaceWith(
+    "<button type='button' class='btn btn-success btn-sm border-0 px-3 buttons-save'>Save</button>"
+  );
+});
+
 $(document).on("click", ".buttons-save", function () {
   let commentIndex = $(this).closest(".myDivComment").index();
-  let commentEditor = $(".edition")[commentIndex];
-
-  // let bodyComment = commentEditor;
-  // let email = visibleComments[commentIndex].email;
-  // let comment = {
-  //   email: email.val(),
-  //   body: bodyComment.val(),
-  // };
-  // visibleComments[commentIndex] = comment
-  // const bodyIndex = visibleComments[commentIndex].body;
-
-  let html = $(commentEditor).val();
-  // $(commentEditor).text(html);
-  console.log(html);
+  let commentEditor = $(".textComment")[commentIndex];
+  let commentText = $(commentEditor).val();
   $(commentEditor).replaceWith(
-    "<p class='comments commentsBody'>" + html + "</p>"
+    "<p class='comments commentsBody'>" + commentText + "</p>"
   );
 
-  let buttonSaver = $(".buttons-save")[commentIndex];
-  $(buttonSaver).replaceWith(
+  let bodyComment = commentText;
+  let email = visibleComments[commentIndex].email;
+  visibleComments[commentIndex] = {
+    email: email,
+    body: bodyComment,
+  };
+
+  console.log(visibleComments);
+});
+
+$(document).on("click", ".buttons-save", function () {
+  $(this).replaceWith(
     "<button type='button' class='btn btn-success btn-sm border-0 px-3 buttons-edit'>Edit</button>"
   );
 });
